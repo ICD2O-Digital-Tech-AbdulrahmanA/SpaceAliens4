@@ -68,6 +68,7 @@ class GameScene extends Phaser.Scene {
         this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, 'ship')
         this.missileGroup = this.physics.add.group()
         this.alienGroup = this.add.group()
+        this.powerUpGruop = this.physics.add.group()
         this.createAlien()
         this.shield = this.add.image(this.ship.x, this.ship.y, 'shield').setScale(1.5)
         this.shield.setVisible(false)
