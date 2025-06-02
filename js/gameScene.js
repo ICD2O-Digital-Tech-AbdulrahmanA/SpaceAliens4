@@ -120,10 +120,10 @@ class GameScene extends Phaser.Scene {
             this.hasShield = true
         }
 
-    }
+
     
 
-    update(time, delta) 
+    update(time, delta) {
         if (this.isGameOver) {
             return
         }
@@ -158,7 +158,7 @@ class GameScene extends Phaser.Scene {
                 this.ship.x = 1920
             }
         }
-        
+            
         if (keyRightObj.isDown === true) {
             this.ship.x += 15
             if (this.ship.x > 1920) {
@@ -190,7 +190,7 @@ class GameScene extends Phaser.Scene {
             this.shield.x = this.ship.x
             this.shield.y = this.ship.y
         }
-
-
+    }
+}
 
     export default GameScene
