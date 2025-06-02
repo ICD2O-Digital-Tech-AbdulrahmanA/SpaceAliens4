@@ -78,7 +78,7 @@ class GameScene extends Phaser.Scene {
             this.scoreText.setText('Score: ' + this.score.toString())
             this.sound.play('explosion')
             if (this.score === 15 && !this.powerUpSpawned) {
-                const powerUp = this.powerUpGRoup.create(
+                const powerUp = this.powerUpGroup.create(
                     Phaser.Math.Between(100, 1820),
                     Phaser.Math.Between(100, 900),
                     'powerUp'
