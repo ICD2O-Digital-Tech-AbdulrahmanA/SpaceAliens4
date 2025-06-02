@@ -70,7 +70,7 @@ class GameScene extends Phaser.Scene {
         this.alienGroup = this.add.group()
         this.powerUpGroup = this.physics.add.group()
         this.createAlien()
-        this.shield = this.add.image(this.ship.x, this.ship.y, 'shield').setScale(1.5)
+        this.shield = this.add.image(this.ship.x, this.ship.y, 'shield').setScale(0.3)
         this.shield.setVisible(false)
         this.physics.add.overlap(this.missileGroup, this.alienGroup, function (missileCollide, alienCollide) {
             alienCollide.destroy()
