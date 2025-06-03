@@ -64,7 +64,7 @@ class GameScene extends Phaser.Scene {
         this.score = 0
         this.background = this.add.image(0, 0, 'starBackground').setScale(2.0)
         this.background.setOrigin(0, 0)
-        this.scoreText = this.add.text(10, 10, 'score: ' + this.score.toString(), this.scoreTextStyle)
+        this.scoreText = this.add.text(10, 10, 'Score: ' + this.score.toString(), this.scoreTextStyle)
         this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, 'ship')
         this.missileGroup = this.physics.add.group()
         this.alienGroup = this.add.group()
@@ -78,7 +78,7 @@ class GameScene extends Phaser.Scene {
             this.score = this.score + 1
             this.scoreText.setText('Score: ' + this.score.toString())
             this.sound.play('explosion')
-            if (this.score === 15 && !this.powerUpSpawned) {
+            if (this.score === 15 || this.score === 30 || this.score === 45 || this.score === 60 && !this.powerUpSpawned) {
                 const powerUp = this.physics.add.sprite(
                     Phaser.Math.Between(100, 1820),
                     Phaser.Math.Between(100, 900),
@@ -191,6 +191,12 @@ class GameScene extends Phaser.Scene {
             this.shield.x = this.ship.x
             this.shield.y = this.ship.y
         }
+
+        this.alienGroup.getChildren().forEach(function (alien) {
+            if (alien.y > 1080) {
+                this.alien.y = 0
+            }
+        })
     }
 }
 

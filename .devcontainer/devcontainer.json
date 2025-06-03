@@ -34,6 +34,7 @@
                     "--line-length",
                     "120"
                 ],
+                "image": "mcr.microsoft.com/devcontainers/php:0-8.2",
                 "python.linting.enabled": true,
                 "terminal.integrated.copyOnSelection": true,
                 "terminal.integrated.fontSize": 20,
